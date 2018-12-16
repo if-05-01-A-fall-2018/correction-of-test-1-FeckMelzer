@@ -1,0 +1,66 @@
+# Dices
+"Enter first number:Enter second number:You rolled:"
+
+inc 8
+
+# print "Enter first number:"
+
+lit 0
+lit 19
+lit 20
+out 2
+
+la 0 32 #int1
+la 0 36
+in 0
+
+out 3
+
+# print "Enter second number:"
+
+lit 19
+lit 19
+lit 20
+out 2
+
+la 0 36 #int2
+la 0 40
+in 0
+
+out 3
+
+#if equals(number1, number2)
+lv 0 32
+lv 0 36
+rel 2
+fjmp  .notequal
+
+# equal
+la 0 40
+lv 0 32
+lv 0 36
+add
+lit 2
+mul
+sto
+jmp .end
+
+# not equal
+.notequal
+la 0 40
+lv 0 32
+lv 0 36
+add
+sto
+
+.end
+lit 39 # print "you rolled"
+lit 11
+lit 12
+out 2
+lv 0 40
+lit 1
+out 0
+out 3
+
+halt
